@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Longer</title>
+  <style>
+    a {
+        text-decoration: none;
+    }
+    body {
+      font-family: "San Francisco", Arial, sans-serif;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      background-color: #f8f8f8;    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #2e3339;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #4a4a4a;
+      padding: 0 20px;
+    }
+
+    .emoji {
+      margin-bottom: 30px;
+      display: inline-block;
+      margin: 10px;
+      padding: 8px 16px;
+      background-color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 20px;
+
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #333333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 1;
+    }
+  
+    .navbar-brand {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  
+    .navbar-links {
+      list-style-type: none;
+      margin: 50px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+  
+    .navbar-links li {
+      margin-left: 20px;
+    }
+  
+    .navbar-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  
+    .navbar-links a:hover {
+      color: #cccccc;
+    }
+
+    /* Main content container */
+    .content {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+
+    /* Media queries for responsive design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .emoji {
+        font-size: 32px;
+      }
+
+      .navbar a {
+        font-size: 16px;
+        margin: 0 10px;
+      }
+
+      .content {
+        margin-top: 100px;
+      }
+    }
+
+    .modal {
+        background-color: #ffffff;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        display: block;
+        text-decoration: none;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+    
+      .limited-text {
+        font-size: 15px;
+        text-align: left;
+      }
+
+      .study-content {
+        font-size: 20px;
+        text-align: left;
+        text-align: justify;
+      }
+
+      .study-link {
+        font-size: 17px;
+      }
+
+      .get-benefits {
+        font-size: 23px;
+      }
+      
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">Live Longer</a>
+    <ul class="navbar-links">
+      <li><a href="https://twitter.com/DanielTerreroC" target="_blank">Talk With Me</a></li>
+    </ul>
+  </nav>
+  {% block content %} {% endblock %}
+  
+</body>
+</html>
+
+<script>
+  {% block script %} {% endblock %}
+  var paragraph = document.getElementById("limited-text");
+  var limit = 50; // Set the character limit here
+
+  var text = paragraph.innerHTML;
+  if (text.length > limit) {
+    var truncatedText = text.substring(0, limit) + "...";
+    paragraph.innerHTML = truncatedText;
+  }
+</script>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+
+    
+    <h1>Fuck Seed Oils</h1>
+
+        <div class="emoji">
+            <a href="/supplements/">💊</a>
+        </div>
+        <div class="emoji">
+            <a href="/sleep/">💤</a>
+        </div>
+        <div class="emoji">
+            <a href="/diet/">🥦</a>
+        </div>
+
+        <div class="modal">
+            <p>{% for study in studies %}
+
+                {% if study.filter == "Diet" %}
+
+                    <a href="/{{ study.slug }}/">{{ study.title }} 🥦</a>
+                    <p class="limited-text" id="limited-text">{{ study.content }}</p>
+                {% endif %}
+
+            {% endfor %}</p>
+        </div>
+  </div>
+{% endblock %}

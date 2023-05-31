@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+
+    
+    <h1>Longevity Made Simple</h1>
+    <p>Remember to get ☀️ light!</p>
+    <p>Explore our topics:</p>
+
+        <div class="emoji">
+            <a href="/supplements/">💊</a>
+        </div>
+        <div class="emoji">
+            <a href="/sleep/">💤</a>
+        </div>
+        <div class="emoji">
+            <a href="/diet/">🥦</a>
+        </div>
+
+        <div class="modal">
+            <p>{% for study in studies %}
+
+                {% if study.filter == "Supplements" %}
+
+                    <a href="/{{ study.slug }}/">{{ study.title }} 💊</a>
+
+                {% elif study.filter == "Sleep" %}
+
+                    <a href="/{{ study.slug }}/">{{ study.title }} 💤</a>
+
+                {% elif study.filter == "Diet" %}
+
+                    <a href="/{{ study.slug }}/">{{ study.title }} 🥦</a>
+
+                {% endif %}
+                <p class="limited-text" id="limited-text">{{ study.content }}</p>
+            {% endfor %}</p>
+        </div>
+  </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
