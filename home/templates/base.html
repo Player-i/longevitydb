@@ -166,12 +166,15 @@
 
 <script>
   {% block script %} {% endblock %}
-  var paragraph = document.getElementById("limited-text");
-  var limit = 50; // Set the character limit here
+  var elements = document.querySelectorAll(".limited-text");
 
-  var text = paragraph.innerHTML;
-  if (text.length > limit) {
-    var truncatedText = text.substring(0, limit) + "...";
-    paragraph.innerHTML = truncatedText;
-  }
+  elements.forEach((element) => {
+    const maxLength = 50; // Maximum length of the text
+  
+    // Check if the text content exceeds the maximum length
+    if (element.textContent.length > maxLength) {
+      const truncatedText = element.textContent.slice(0, maxLength) + '...';
+      element.textContent = truncatedText;
+    }
+  });
 </script>
