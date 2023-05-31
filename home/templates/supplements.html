@@ -16,16 +16,15 @@
             <a href="/diet/">🥦</a>
         </div>
 
-        <div class="modal">
             <p>{% for study in studies %}
+                <div class="modal">
 
-                {% if study.filter == "Supplements" %}
-
-                    <a href="/{{ study.slug }}/">{{ study.title }} 💊</a>
-                    <p class="limited-text" id="limited-text">{{ study.content }}</p>
-                {% endif %}
-
+                    {% if study.filter == "Diet" %}
+    
+                        <a href="/{{ study.slug }}/">{{ study.title }} 🥦</a>
+                        <p class="limited-text" id="limited-text">{{ study.content }}</p>
+                    {% endif %}
+                </div>
             {% endfor %}</p>
-        </div>
   </div>
 {% endblock %}
