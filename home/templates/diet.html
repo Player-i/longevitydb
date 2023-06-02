@@ -18,14 +18,16 @@
 
         
             <p>{% for study in studies %}
-                <div class="modal">
+               
 
                 {% if study.filter == "Diet" %}
+                <div class="modal">
 
                     <a href="/{{ study.slug }}/">{{ study.title }} 🥦</a>
                     <p class="limited-text" id="limited-text">{{ study.content }}</p>
-                {% endif %}
                 </div>
+                {% endif %}
+                
 
             {% endfor %}</p>
         
