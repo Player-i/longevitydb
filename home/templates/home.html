@@ -25,15 +25,15 @@
             <div class="modal">
                 {% if study.filter == "Supplements" %}
 
-                    <a href="/{{ study.slug }}/">{{ study.title }} 💊</a>
+                    <a rel="canonical" href="/{{ study.slug }}/">{{ study.title }} 💊</a>
 
                 {% elif study.filter == "Sleep" %}
 
-                    <a href="/{{ study.slug }}/">{{ study.title }} 💤</a>
+                    <a rel="canonical"  href="/{{ study.slug }}/">{{ study.title }} 💤</a>
 
                 {% elif study.filter == "Diet" %}
 
-                    <a href="/{{ study.slug }}/">{{ study.title }} 🥦</a>
+                    <a rel="canonical" href="/{{ study.slug }}/">{{ study.title }} 🥦</a>
 
                 {% endif %}
                 <p class="limited-text" id="limited-text">{{ study.content }}</p>
